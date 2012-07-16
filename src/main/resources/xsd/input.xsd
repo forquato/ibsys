@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="input">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="qualitycontrol"/>
+        <xs:element ref="sellwish"/>
+        <xs:element ref="selldirect"/>
+        <xs:element ref="orderlist"/>
+        <xs:element ref="productionlist"/>
+        <xs:element ref="workingtimelist"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="qualitycontrol">
+    <xs:complexType>
+      <xs:attribute name="delay" use="required" type="xs:integer"/>
+      <xs:attribute name="losequantity" use="required" type="xs:integer"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sellwish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="selldirect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="orderlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="order">
+    <xs:complexType>
+      <xs:attribute name="article" use="required" type="xs:integer"/>
+      <xs:attribute name="modus" use="required" type="xs:integer"/>
+      <xs:attribute name="quantity" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productionlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="production"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="production">
+    <xs:complexType>
+      <xs:attribute name="article" use="required" type="xs:integer"/>
+      <xs:attribute name="quantity" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="workingtimelist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="workingtime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="workingtime">
+    <xs:complexType>
+      <xs:attribute name="overtime" use="required" type="xs:integer"/>
+      <xs:attribute name="shift" use="required" type="xs:integer"/>
+      <xs:attribute name="station" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:attribute name="article" use="required" type="xs:integer"/>
+      <xs:attribute name="penalty" type="xs:decimal"/>
+      <xs:attribute name="price" type="xs:decimal"/>
+      <xs:attribute name="quantity" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

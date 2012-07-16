@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/jsf/template/default.xhtml">
+
+            <ui:define name="content">
+                <h:head>
+                    <title><h:outputText value="#{msg['chart.title']}"/></title>
+                </h:head>
+                <f:view locale="#{languageBean.locale}">
+                    <h1><h:outputText value="#{msg['chart.h1']}"/></h1>
+                    <div class="meter">
+                        <span style="width: 75%"></span>
+                    </div>
+                    <div style="width:1150px; margin-left:auto ;margin-right:auto; margin-top:20px">
+                        <div style="width: 400px; float:left">
+                            <p:barChart value="#{mgdBean.chartBean.shiftModel}" title="#{msg['chart.shifts']}" min="0" max="3" style="height:160px"/>
+                            <p:barChart value="#{mgdBean.chartBean.overtimeModel}" title="#{msg['chart.overtime']}" min="0" max="1200" style="height:170px"/>
+                        </div>
+                        <div style="width: 750px; margin-left: 400px">
+                            <p:barChart value="#{mgdBean.chartBean.orderModel}" title="#{msg['chart.orders']}" min="0" style="height:160px"/>
+                            <p:barChart value="#{mgdBean.chartBean.productionModel}" title="#{msg['chart.productions']}" min="0" style="height:170px"/>
+                        </div>
+                    </div>
+                    <h:button image="./resources/img/prev_48.png" outcome="forecast" style="margin: 10px 5px 0px 0px"/>
+                    <h:button image="./resources/img/next_48.png" outcome="download" style="margin: 10px 5px 0px 0px"/>
+                </f:view>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

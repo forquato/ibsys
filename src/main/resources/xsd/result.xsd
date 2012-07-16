@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="results">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="warehousestock"/>
+        <xs:element ref="inwardstockmovement"/>
+        <xs:element ref="futureinwardstockmovement"/>
+        <xs:element ref="idletimecosts"/>
+        <xs:element ref="waitinglistworkstations"/>
+        <xs:element ref="waitingliststock"/>
+        <xs:element ref="ordersinwork"/>
+        <xs:element ref="completedorders"/>
+        <xs:element ref="cycletimes"/>
+        <xs:element ref="result"/>
+      </xs:sequence>
+      <xs:attribute name="game" use="required" type="xs:integer"/>
+      <xs:attribute name="group" use="required" type="xs:integer"/>
+      <xs:attribute name="period" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="warehousestock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="article"/>
+        <xs:element ref="totalstockvalue"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="article">
+    <xs:complexType>
+      <xs:attribute name="amount" use="required" type="xs:integer"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="pct" use="required"/>
+      <xs:attribute name="price" use="required"/>
+      <xs:attribute name="startamount" use="required" type="xs:integer"/>
+      <xs:attribute name="stockvalue" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="totalstockvalue" type="xs:string"/>
+  <xs:element name="inwardstockmovement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="futureinwardstockmovement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="waitinglistworkstations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="workplace"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="waitingliststock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="missingpart"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="missingpart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="waitinglist"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ordersinwork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="workplace"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="completedorders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cycletimes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="order"/>
+      </xs:sequence>
+      <xs:attribute name="startedorders" use="required" type="xs:integer"/>
+      <xs:attribute name="waitingorders" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="general"/>
+        <xs:element ref="defectivegoods"/>
+        <xs:element ref="normalsale"/>
+        <xs:element ref="directsale"/>
+        <xs:element ref="marketplacesale"/>
+        <xs:element ref="summary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="general">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="capacity"/>
+        <xs:element ref="possiblecapacity"/>
+        <xs:element ref="relpossiblenormalcapacity"/>
+        <xs:element ref="productivetime"/>
+        <xs:element ref="effiency"/>
+        <xs:element ref="sellwish"/>
+        <xs:element ref="salesquantity"/>
+        <xs:element ref="deliveryreliability"/>
+        <xs:element ref="idletime"/>
+        <xs:element ref="idletimecosts"/>
+        <xs:element ref="storevalue"/>
+        <xs:element ref="storagecosts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="capacity">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="possiblecapacity">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relpossiblenormalcapacity">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productivetime">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="effiency">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sellwish">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="salesquantity">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deliveryreliability">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idletime">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storevalue">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storagecosts">
+    <xs:complexType>
+      <xs:attribute name="all" use="required"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="defectivegoods">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="quantity"/>
+        <xs:element ref="costs"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="quantity">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:integer"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="costs">
+    <xs:complexType>
+      <xs:attribute name="all" use="required"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="normalsale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="salesprice"/>
+        <xs:element ref="profit"/>
+        <xs:element ref="profitperunit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="salesprice">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="profitperunit">
+    <xs:complexType>
+      <xs:attribute name="all" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="directsale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="profit"/>
+        <xs:element ref="contractpenalty"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contractpenalty">
+    <xs:complexType>
+      <xs:attribute name="all" use="required"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="marketplacesale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="profit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="summary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="profit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="order">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="batch"/>
+      </xs:sequence>
+      <xs:attribute name="amount" type="xs:integer"/>
+      <xs:attribute name="article" type="xs:integer"/>
+      <xs:attribute name="averageunitcosts"/>
+      <xs:attribute name="cost"/>
+      <xs:attribute name="cycletimefactor"/>
+      <xs:attribute name="cycletimemin" type="xs:integer"/>
+      <xs:attribute name="entirecosts"/>
+      <xs:attribute name="finishtime" type="xs:NMTOKEN"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="item" type="xs:integer"/>
+      <xs:attribute name="materialcosts"/>
+      <xs:attribute name="mode" type="xs:integer"/>
+      <xs:attribute name="ordercosts"/>
+      <xs:attribute name="orderperiod" type="xs:integer"/>
+      <xs:attribute name="period" type="xs:integer"/>
+      <xs:attribute name="piececosts"/>
+      <xs:attribute name="quantity" type="xs:integer"/>
+      <xs:attribute name="starttime" type="xs:NMTOKEN"/>
+      <xs:attribute name="time" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="batch">
+    <xs:complexType>
+      <xs:attribute name="amount" use="required" type="xs:integer"/>
+      <xs:attribute name="cost" use="required"/>
+      <xs:attribute name="cycletime" use="required" type="xs:integer"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idletimecosts">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element maxOccurs="unbounded" ref="workplace"/>
+        <xs:element ref="sum"/>
+      </xs:sequence>
+      <xs:attribute name="all"/>
+      <xs:attribute name="average"/>
+      <xs:attribute name="current"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sum">
+    <xs:complexType>
+      <xs:attribute name="idletime" use="required" type="xs:integer"/>
+      <xs:attribute name="machineidletimecosts" use="required"/>
+      <xs:attribute name="setupevents" use="required" type="xs:integer"/>
+      <xs:attribute name="wagecosts" use="required"/>
+      <xs:attribute name="wageidletimecosts" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="workplace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="waitinglist"/>
+      </xs:sequence>
+      <xs:attribute name="amount" type="xs:integer"/>
+      <xs:attribute name="batch" type="xs:integer"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="idletime" type="xs:integer"/>
+      <xs:attribute name="item" type="xs:integer"/>
+      <xs:attribute name="machineidletimecosts"/>
+      <xs:attribute name="order" type="xs:integer"/>
+      <xs:attribute name="period" type="xs:integer"/>
+      <xs:attribute name="setupevents" type="xs:integer"/>
+      <xs:attribute name="timeneed" type="xs:integer"/>
+      <xs:attribute name="wagecosts"/>
+      <xs:attribute name="wageidletimecosts"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="waitinglist">
+    <xs:complexType>
+      <xs:attribute name="amount" use="required" type="xs:integer"/>
+      <xs:attribute name="firstbatch" use="required" type="xs:integer"/>
+      <xs:attribute name="item" use="required" type="xs:integer"/>
+      <xs:attribute name="lastbatch" use="required" type="xs:integer"/>
+      <xs:attribute name="order" use="required" type="xs:integer"/>
+      <xs:attribute name="period" use="required" type="xs:integer"/>
+      <xs:attribute name="timeneed" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="profit">
+    <xs:complexType>
+      <xs:attribute name="all" use="required"/>
+      <xs:attribute name="average" use="required"/>
+      <xs:attribute name="current" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+        <ui:composition template="./WEB-INF/jsf/template/default.xhtml">
+
+            <ui:define name="content">
+                <h:head>
+                    <title><h:outputText value="#{msg['ibsys.error.title']}"/></title>
+                </h:head>
+                <li style="margin-top: 50px; color:red">
+                    <h:outputText value="#{msg['ibsys.error']}"/>
+                </li>
+                <li>
+                    <h:button image="./resources/img/next_48.png" outcome="index" style="margin-top: 10px"/>
+                </li>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>

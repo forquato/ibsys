@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+
+    <h:body>
+        <ui:composition template="./WEB-INF/jsf/template/default.xhtml">
+            
+            <ui:define name="content">
+                <h:head>
+                    <title><h:outputText value="#{msg['ibsys.title']}"/></title>
+                </h:head>
+                <f:view locale="#{languageBean.locale}">
+                    <h:form>
+                        <h:commandButton action="#{mgdBean.start}" image="./resources/img/next_128.png" style="margin-top: 100px"/>
+                    </h:form>
+                    <div style="margin-top: 10px; font-size: 20px; color: #666">
+                        <h:outputText value="#{msg['ibsys.text']}"/>
+                    </div>
+                </f:view>
+            </ui:define>
+            
+        </ui:composition>
+    </h:body>
+</html>

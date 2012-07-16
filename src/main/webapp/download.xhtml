@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <body>
+        <ui:composition template="./WEB-INF/jsf/template/default.xhtml">
+            
+            <ui:define name="content">
+                <h:head>
+                    <title><h:outputText value="#{msg['download.title']}"/></title>
+                </h:head>
+                <f:view locale="#{languageBean.locale}">
+                    <h1><h:outputText value="#{msg['download.h1']}"/></h1>
+                    <div class="meter">
+                        <span style="width: 100%"></span>
+                    </div>
+                    <h:form>
+                        <c:choose>
+                            <c:when test="#{mgdBean.inputDTO != null}">
+                                <h:commandButton action="#{mgdBean.submitDownload}" image="./resources/img/save_128.png"  style="margin-top: 100px"/>
+                            </c:when>
+                            <c:otherwise>
+                                <h:outputText value="#{msg['download.error']}" style="color: red"/>
+                            </c:otherwise>
+                        </c:choose>
+                        <li>
+                            <h:button image="./resources/img/prev_48.png" outcome="chart" style="margin: 20px 5px 0px 0px"/>
+                            <h:button image="./resources/img/next_48.png" outcome="index" style="margin: 20px 0px 0px 5px"/>
+                        </li>
+                    </h:form>
+                </f:view>
+            </ui:define>
+            
+        </ui:composition>
+    </body>
+</html>
