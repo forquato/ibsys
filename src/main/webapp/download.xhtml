@@ -21,15 +21,15 @@
                     <h:form>
                         <c:choose>
                             <c:when test="#{mgdBean.inputDTO != null}">
-                                <h:commandButton action="#{mgdBean.submitDownload}" image="./resources/img/save_128.png"  style="margin-top: 100px"/>
+                                <h:commandButton action="#{mgdBean.submitDownload}" image="./resources/img/save.jpg"  style="width: 300px; margin-top: 100px"/>
                             </c:when>
                             <c:otherwise>
                                 <h:outputText value="#{msg['download.error']}" style="color: red"/>
                             </c:otherwise>
                         </c:choose>
                         <li>
-                            <h:button image="./resources/img/prev_48.png" outcome="chart" style="margin: 20px 5px 0px 0px"/>
-                            <h:button image="./resources/img/next_48.png" outcome="index" style="margin: 20px 0px 0px 5px"/>
+                            <h:button image="./resources/img/pfeil_back.jpg" outcome="chart" style="width: 100px; margin: 20px 5px 0px 0px"/>
+                            <h:button image="./resources/img/pfeil_forward.jpg" outcome="index" style="width: 100px; margin: 20px 0px 0px 5px"/>
                         </li>
                     </h:form>
                 </f:view>
