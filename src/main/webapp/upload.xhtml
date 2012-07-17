@@ -9,35 +9,35 @@
     
     <h:body>
         <ui:composition template="./WEB-INF/jsf/template/default.xhtml">
-            
             <ui:define name="content">
-                <h:head>
-                    <title><h:outputText value="#{msg['upload.title']}"/></title>
-                </h:head>
-                <f:view locale="#{languageBean.locale}">
-                    <h1><h:outputText value="#{msg['upload.h1']}"/></h1>
-                    <div class="meter">
-                        <span style="width: 25%"></span>
-                    </div>
-                    <!-- enctype="multipart/form-data" -->
-                    <h:form enctype="multipart/form-data" style="margin-top: 40px">
-                        <c:if test="#{mgdBean.resultDTO != null}">
-                            <li style="margin-bottom: 10px; color: #666">
-                                <h:outputText value="#{msg['upload.warning']}"/>
-                            </li>
-                        </c:if>
-                        <t:inputFileUpload value="#{mgdBean.uploadedFile}" style="color: #666;"/>
-                        <li>
-                            <h:messages style="color: red"/>
-                        </li>
-                        <div>
-                            <h:button image="./resources/img/pfeil_back.jpg" outcome="index" style="margin: 15px 5px 0px 0px; width: 100px"/>
-                            <h:commandButton action="#{mgdBean.submitUpload()}" image="./resources/img/pfeil_forward.jpg" style="margin: 15px 0px 0px 5px; width: 100px"/>
+                <div style="background-image:url(./resources/img/background.jpg)"> 
+                    <h:head>
+                        <title><h:outputText value="#{msg['upload.title']}"/></title>
+                    </h:head>
+                    <f:view locale="#{languageBean.locale}">
+                        <h1><h:outputText value="#{msg['upload.h1']}"/></h1>
+                        <div class="meter">
+                            <span style="width: 25%"></span>
                         </div>
-                    </h:form>
-                </f:view>
-            </ui:define>
-            
+                        <!-- enctype="multipart/form-data" -->
+                        <h:form enctype="multipart/form-data" style="margin-top: 40px; height: 450px">
+                            <c:if test="#{mgdBean.resultDTO != null}">
+                                <li style="margin-bottom: 10px; color: #666">
+                                    <h:outputText value="#{msg['upload.warning']}"/>
+                                </li>
+                            </c:if>
+                            <t:inputFileUpload value="#{mgdBean.uploadedFile}" style="color: #666;"/>
+                            <li>
+                                <h:messages style="color: red"/>
+                            </li>
+                            <div>
+                                <h:button image="./resources/img/pfeil_back.jpg" outcome="index" style="margin: 15px 5px 0px 0px; width: 100px"/>
+                                <h:commandButton action="#{mgdBean.submitUpload()}" image="./resources/img/pfeil_forward.jpg" style="margin: 15px 0px 0px 5px; width: 100px"/>
+                            </div>
+                        </h:form>
+                    </f:view>
+                </div>
+            </ui:define>                
         </ui:composition>  
     </h:body> 
 </html>
