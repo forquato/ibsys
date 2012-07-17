@@ -1,5 +1,3 @@
-//test
-
 package de.hska.ibsys.beans;
 
 import de.hska.ibsys.dto.InputDTO;

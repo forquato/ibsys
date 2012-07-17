@@ -13,14 +13,20 @@
                 <h:head>
                     <title><h:outputText value="#{msg['ibsys.title']}"/></title>
                 </h:head>
+                <h:graphicImage id="logoImage"
+                                name="ibsys2.jpg"
+                                library="img"/>
                 <f:view locale="#{languageBean.locale}">
                     <h:form>
-                        <h:commandButton action="#{mgdBean.start}" image="./resources/img/next_128.png" style="margin-top: 100px"/>
+                        <h:commandButton action="#{mgdBean.start}" image="./resources/img/pfeil_forward.jpg" style="width: 100px; margin-top: 50px;"/>
                     </h:form>
                     <div style="margin-top: 10px; font-size: 20px; color: #666">
                         <h:outputText value="#{msg['ibsys.text']}"/>
                     </div>
                 </f:view>
+                <h:outputLink value="http://www.iwi.hs-karlsruhe.de/scs/start" target="blank">
+                    Dieses Tool liefert die Planungsdaten einer Periode für den Supply Chain Simulator
+                </h:outputLink>
             </ui:define>
             
         </ui:composition>

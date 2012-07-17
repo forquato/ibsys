@@ -1,6 +1,5 @@
 package de.hska.ibsys.dto;
 
-//test
 import de.hska.ibsys.input.Input;
 
 /**

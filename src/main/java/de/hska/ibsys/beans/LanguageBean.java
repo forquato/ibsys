@@ -1,7 +1,5 @@
 package de.hska.ibsys.beans;
 
-
-//bljabjablja
 import java.io.Serializable;
 import java.util.Locale;
 import javax.enterprise.context.SessionScoped;
