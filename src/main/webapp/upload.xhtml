@@ -23,7 +23,7 @@
                         <h:form enctype="multipart/form-data" style="margin-top: 40px; height: 450px">
                             <c:if test="#{mgdBean.resultDTO != null}">
                                 <li style="margin-bottom: 10px; color: #666">
-                                    <h:outputText value="#{msg['upload.warning']}"/>
+                                    <h:outputText value="#{msg['upload.warning']}" style="color: red "/>
                                 </li>
                             </c:if>
                             <t:inputFileUpload value="#{mgdBean.uploadedFile}" style="color: #666;"/>
