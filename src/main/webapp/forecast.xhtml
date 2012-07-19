@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     
@@ -20,7 +21,10 @@
                     <div class="meter">
                         <span style="width: 50%"></span>
                     </div>
-                    
+                    <div style="width:1150px; margin-left:auto ;margin-right:auto; margin-top:20px"/>
+                    <p:accordionPanel>
+                            <p:tab title="#{msg['forecast.figures.1']}">
+                                <div style="width: 1000px;float:left">
                         <table>
                             <tr>
                                 <th style="background: white"></th>
@@ -178,7 +182,9 @@
                                 </td>
                             </tr>
                         </table>
-                        
+                                </div>
+                        </p:tab>
+                        <p:tab title="#{msg['forecast.figures.2']}">
                         <table style="width: 400px">
                             <tr>
                                 <th colspan="4" style="background:#FFC6A5; color: #CC0000"><h:outputText value="#{msg['forecast.config.title']}"/></th>
@@ -241,7 +247,8 @@
                                 </td>
                             </tr>
                         </table>
-                        
+                        </p:tab>
+                        </p:accordionPanel>
                 </f:view>
                 </h:form>
             </ui:define>
