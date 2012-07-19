@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html">
     
 
     <h:body>
@@ -16,17 +15,18 @@
                 <h:graphicImage id="logoImage"
                                 name="ibsys2.jpg"
                                 library="img"/>
-                <f:view locale="#{languageBean.locale}">
                     <h:form>
                         <h:commandButton action="#{mgdBean.start}" image="./resources/img/pfeil_forward.jpg" style="width: 100px; margin-top: 50px;"/>
                     </h:form>
                     <div style="margin-top: 10px; font-size: 20px; color: #666">
                         <h:outputText value="#{msg['ibsys.text']}"/>
                     </div>
-                </f:view>
-                <h:outputLink value="http://www.iwi.hs-karlsruhe.de/scs/start" target="blank">
-                    Dieses Tool liefert die Planungsdaten einer Periode für den Supply Chain Simulator
+                <div style="margin-top: 80px">
+                <h:outputLink value="scsim.htm">
+                    Dieses Tool liefert die Daten für den Supply Chain Simulator.<p/>
+                    Hier ein paar Eindrücke.
                 </h:outputLink>
+                </div>
             </ui:define>
             
         </ui:composition>
