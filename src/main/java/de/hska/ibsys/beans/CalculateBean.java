@@ -465,7 +465,7 @@ public class CalculateBean {
         double factorStock = resultDTO.getProductionFactor();
         double[] factorPeriod = new double[resultDTO.getPeriodFactors().length];
         for (int i = 0; i < resultDTO.getPeriodFactors().length; i++) {
-            factorPeriod[i] = resultDTO.getPeriodFactors()[0];
+            factorPeriod[i] = resultDTO.getPeriodFactors()[i];
         }
         
         double[] plandPStockTemp = new double[3];
