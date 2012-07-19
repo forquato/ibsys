@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author p0004
+ * @author p01
  */
 public class TestCalculateBean {
     

@@ -3,24 +3,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
         <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" type="image/x-icon" href="./resources/img/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="./resources/img/favicon.ico"/>       
     </h:head>
 
     <h:body>
-
-        <div id="top">
-            <ui:insert name="top">
-                <h:link outcome="index" style="text-decoration: none;">
-                    <h:outputText value="#{msg['ibsys.top']}"/>
-                </h:link>
-            </ui:insert>
-        </div>
+        <ui:insert name="top" id="top">
+            <h:form>
+                <p:menuButton value="Options">
+                    <p:menuitem value="Save"/>  
+                    <p:menuitem value="Update"/>  
+                    <p:menuitem value="Delete" ajax="false"/>
+                    <p:menuitem value="Homepage" url="http://www.primefaces.org"/>  
+                </p:menuButton>
+                <h:link outcome="index" style="text-decoration: none; margin-left: 400px; color: #666; font-size: 20px;">
+                <h:outputText value="#{msg['ibsys.top']}"/>
+            </h:link>
+            </h:form>
+        </ui:insert>
         <h:form style="margin-top:50px">
                     <h:outputText value="#{msg['ibsys.bottom']}"/>
                     <h:outputText style="margin-left: 40px" value="#{msg['ibsys.language']}"/>

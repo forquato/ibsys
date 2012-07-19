@@ -4,7 +4,7 @@ import de.hska.ibsys.input.Input;
 
 /**
  *
- * @author p000p
+ * @author p01
  */
 public class InputDTO {
     /**

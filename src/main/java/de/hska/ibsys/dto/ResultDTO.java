@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author p0004
+ * @author p01
  */
 public class ResultDTO {
     /**

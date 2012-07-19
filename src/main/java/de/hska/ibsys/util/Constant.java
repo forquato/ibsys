@@ -2,11 +2,11 @@ package de.hska.ibsys.util;
 
 /**
  * 
- * @author p0004
+ * @author p01
  */
 public interface Constant {
     // JSF
-    public static final String INPUT_XML_FILE_NAME = "input.xml";
+    public static final String INPUT_XML_FILE_NAME = "export_fuer_scsim.xml";
     public static final String PAGE_INDEX = "index.htm";
     public static final String PAGE_UPLOAD = "upload.htm";
     public static final String PAGE_FORECAST = "forecast.htm";
