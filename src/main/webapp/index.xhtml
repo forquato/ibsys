@@ -15,18 +15,19 @@
                 <h:graphicImage id="logoImage"
                                 name="ibsys2.jpg"
                                 library="img"/>
-                    <h:form>
-                        <h:commandButton action="#{mgdBean.start}" image="./resources/img/button_start.jpg" style="width: 150px; margin-top: 50px;"/>
-                    </h:form>
                     <div style="margin-top: 10px; font-size: 20px; color: #666">
-                        <h:outputText value="#{msg['ibsys.text']}"/>
+                        <h:form>
+                            <h:commandButton action="#{mgdBean.start}" image="./resources/img/button_start.jpg" style="width: 150px; margin-top: 50px;"/>
+                        </h:form>
+                    
+<!--                        <h:outputText value="#{msg['ibsys.text']}"/>-->
                     </div>
-                <div style="margin-top: 80px">
+<!--                <div style="margin-top: 80px">
                 <h:outputLink value="scsim.htm">
                     Dieses Tool liefert die Daten für den Supply Chain Simulator.<p/>
                     Hier ein paar Eindrücke.
                 </h:outputLink>
-                </div>
+                </div>-->
             </ui:define>
             
         </ui:composition>
