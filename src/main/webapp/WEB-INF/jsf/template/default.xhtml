@@ -21,14 +21,7 @@
                 </h:link>
             </ui:insert>
         </div>
-
-        <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
-        </div>
-
-        <div id="bottom">
-            <ui:insert name="bottom">
-                <h:form>
+        <h:form style="margin-top:50px">
                     <h:outputText value="#{msg['ibsys.bottom']}"/>
                     <h:outputText style="margin-left: 40px" value="#{msg['ibsys.language']}"/>
                     <h:selectOneMenu value="#{languageBean.language}" onchange="submit()" style="margin-right: 40px">
@@ -42,6 +35,13 @@
                         <h:outputLink value="#{request.contextPath}/resources/manual_#{msg['ibsys.manual.language']}.pdf">#{msg['ibsys.manual']}</h:outputLink>
                     </h:link>
                 </h:form>
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                
             </ui:insert>
         </div>
 

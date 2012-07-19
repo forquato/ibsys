@@ -12,12 +12,15 @@
                 <h:head>
                     <title><h:outputText value="#{msg['forecast.title']}"/></title>
                 </h:head>
+                <h:form id="Form">
+                    <h:button image="./resources/img/button_back.jpg" outcome="upload" style="width: 100px; margin: 0px 900px 0px 0px"/>
+                    <h:commandButton action="#{mgdBean.submitForcasts}" image="./resources/img/button_next.jpg" style="width: 100px; margin: 35px 0px 0px 5px"/>
                 <f:view locale="#{languageBean.locale}">
                     <h1><h:outputText value="#{msg['forecast.h1']}"/></h1>
                     <div class="meter">
                         <span style="width: 50%"></span>
                     </div>
-                    <h:form id="Form">
+                    
                         <table>
                             <tr>
                                 <th style="background: white"></th>
@@ -239,10 +242,8 @@
                             </tr>
                         </table>
                         
-                        <h:button image="./resources/img/button_back.jpg" outcome="upload" style="width: 100px; margin: 47px 510px 0px 0px"/>
-                        <h:commandButton action="#{mgdBean.submitForcasts}" image="./resources/img/button_next.jpg" style="width: 100px; margin: 35px 0px 0px 5px"/>
-                    </h:form>
                 </f:view>
+                </h:form>
             </ui:define>
 
         </ui:composition>

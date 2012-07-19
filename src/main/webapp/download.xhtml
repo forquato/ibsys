@@ -13,6 +13,10 @@
                 <h:head>
                     <title><h:outputText value="#{msg['download.title']}"/></title>
                 </h:head>
+                <li>
+                    <h:button image="./resources/img/button_back.jpg" outcome="chart" style="width: 100px; margin: 20px 900px 0px 0px"/>
+                    <h:button image="./resources/img/button_next.jpg" outcome="index" style="width: 100px; margin: 20px 0px 0px 5px"/>
+                </li>
                 <f:view locale="#{languageBean.locale}">
                     <h1><h:outputText value="#{msg['download.h1']}"/></h1>
                     <div class="meter">
@@ -27,10 +31,7 @@
                                 <h:outputText value="#{msg['download.error']}" style="color: red"/>
                             </c:otherwise>
                         </c:choose>
-                        <li>
-                            <h:button image="./resources/img/button_back.jpg" outcome="chart" style="width: 100px; margin: 20px 510px 0px 0px"/>
-                            <h:button image="./resources/img/button_next.jpg" outcome="index" style="width: 100px; margin: 20px 0px 0px 5px"/>
-                        </li>
+                        
                     </h:form>
                 </f:view>
             </ui:define>
