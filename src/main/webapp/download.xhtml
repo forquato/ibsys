@@ -26,6 +26,8 @@
                         <c:choose>
                             <c:when test="#{mgdBean.inputDTO != null}">
                                 <h:commandButton action="#{mgdBean.submitDownload}" image="./resources/img/save.jpg"  style="width: 300px; margin-top: 100px"/>
+                                <br></br>
+                                <h:outputText value="#{msg['download.save']}"/>
                             </c:when>
                             <c:otherwise>
                                 <h:outputText value="#{msg['download.error']}" style="color: red"/>
