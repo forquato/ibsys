@@ -23,30 +23,30 @@
                     <div class="meter">
                         <span style="width: 75%"></span>
                     </div>
-                    <div style="width:1150px; margin-left:auto ;margin-right:auto; margin-top:20px">
+                    <div style="width:1150px; margin-left:auto ;margin-right:auto; margin-top:10px">
                  
                         <p:accordionPanel>
                             <p:tab title="Kapazitäten 1">
                                 <div style="width: 1000px;float:left">
-                                    <p:barChart value="#{mgdBean.chartBean.shiftModel}" title="#{msg['chart.shifts']}" min="0" max="3" style="height:260px; float:left" seriesColors="CC0000"/>
+                                    <p:barChart value="#{mgdBean.chartBean.shiftModel}" title="#{msg['chart.shifts']}" min="0" max="3" style="height:250px; float:left" seriesColors="CC0000"/>
                                     <h:outputText value="#{msg['chart.cap1']}" style="font-size: 14pt"/>
                                 </div>
                             </p:tab>
                             <p:tab title="Kapazitäten 2">
                                 <div style="width: 1000px;float:left">
-                                    <p:barChart value="#{mgdBean.chartBean.overtimeModel}" title="#{msg['chart.overtime']}" min="0" max="1200" style="height:260px; float:left" seriesColors="CC0000"/>
+                                    <p:barChart value="#{mgdBean.chartBean.overtimeModel}" title="#{msg['chart.overtime']}" min="0" max="1200" style="height:250px; float:left" seriesColors="CC0000"/>
                                     <h:outputText value="#{msg['chart.cap2']}" style="font-size: 14pt"/>
                                 </div>
                             </p:tab>
                             <p:tab title="Disposition 1">
                                 <div style="width: 1000px;float:left">
-                                    <p:barChart value="#{mgdBean.chartBean.orderModel}" title="#{msg['chart.orders']}" min="0" style="height:300px; width:500px; float:left" seriesColors="CC0000"/>
+                                    <p:barChart value="#{mgdBean.chartBean.orderModel}" title="#{msg['chart.orders']}" min="0" style="height:250px; width:500px; float:left" seriesColors="CC0000"/>
                                     <h:outputText value="#{msg['chart.dis1']}" style="font-size: 14pt"/>
                                 </div>
                             </p:tab>
                             <p:tab title="Disposition 2">
                                 <div style="width: 1000px;float:left">
-                                    <p:barChart value="#{mgdBean.chartBean.productionModel}" title="#{msg['chart.productions']}" min="0" style="height:300px; width:500px; float:left" seriesColors="CC0000"/>
+                                    <p:barChart value="#{mgdBean.chartBean.productionModel}" title="#{msg['chart.productions']}" min="0" style="height:250px; width:500px; float:left" seriesColors="CC0000"/>
                                 <h:outputText value="#{msg['chart.dis2']}" style="font-size: 14pt"/>
                                 </div>
                             </p:tab>
