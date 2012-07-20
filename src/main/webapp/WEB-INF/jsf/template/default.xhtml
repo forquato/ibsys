@@ -18,29 +18,29 @@
             <h:form>
                 <p:menuButton value="Menu">
                     <p:menuitem value="#{msg['ibsys.manual']}" url="/resources/manual_#{msg['ibsys.manual.language']}.pdf" target="blank"/>
-                    <p:menuitem value="Gallerie" url="scsim.htm"/>
-                    <p:menuitem value="SCSim-Homepage" url="http://www.scsim.de" target="blank"/>  
+                    <p:menuitem value="#{msg['ibsys.gallery']}" url="scsim.htm"/>
+                    <p:menuitem value="#{msg['ibsys.scsim']}" url="http://www.scsim.de" target="blank"/>  
                 </p:menuButton>
                 <h:link outcome="index" style="text-decoration: none; margin-left: 400px; color: #666; font-size: 20px;">
                 <h:outputText value="#{msg['ibsys.top']}"/>
             </h:link>
             </h:form>
         </ui:insert>
-        <h:form style="margin-top:20px">
-                    <h:outputText value="#{msg['ibsys.bottom']}" style="float: right"/>
-                    <h:outputText style="float: left" value="#{msg['ibsys.language']}"/>
-                    <h:selectOneMenu value="#{languageBean.language}" onchange="submit()" style="margin-left: 10px">
-                        <f:selectItem itemValue="de" itemLabel="#{msg['ibsys.language.german']}" />
-                        <f:selectItem itemValue="en" itemLabel="#{msg['ibsys.language.english']}" />
-                    </h:selectOneMenu>
-<!--                    <h:outputLink value="http://www.scsim.de" style="margin-right: 40px">
-                        <h:outputText value="{msg['ibsys.scsim']}"/>
-                    </h:outputLink>
-                    <h:link>
-                        <h:outputLink value="{request.contextPath}/resources/manual_{msg['ibsys.manual.language']}.pdf">#{msg['ibsys.manual']}</h:outputLink>
-                    </h:link>
--->                </h:form><!--
--->        <div id="content" class="center_content">
+        <h:form style="margin-top:5px">
+            <h:outputText value="#{msg['ibsys.bottom']}" style="float: right"/>
+            <h:outputText style="float: left" value="#{msg['ibsys.language']}"/>
+            <h:selectOneMenu value="#{languageBean.language}" onchange="submit()" style="margin-left: 10px">
+                <f:selectItem itemValue="de" itemLabel="#{msg['ibsys.language.german']}" />
+                <f:selectItem itemValue="en" itemLabel="#{msg['ibsys.language.english']}" />
+            </h:selectOneMenu>
+<!--        <h:outputLink value="http://www.scsim.de" style="margin-right: 40px">
+                <h:outputText value="{msg['ibsys.scsim']}"/>
+            </h:outputLink>
+            <h:link>
+                <h:outputLink value="{request.contextPath}/resources/manual_{msg['ibsys.manual.language']}.pdf">#{msg['ibsys.manual']}</h:outputLink>
+            </h:link>
+-->     </h:form><!--
+-->     <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
         </div>
 
